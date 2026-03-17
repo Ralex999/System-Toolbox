@@ -5,35 +5,28 @@ import sys
 def run_command(command, description):
     print(f"[#] Running: {description}...")
     try:
-        result = subprocess.run(command, shell=True, check=True, capture_output=True, text=True)
-        print(result.stdout)
-    except subprocess.CalledProcessError as e:
-        print(f"[!] Error during {description}: {e.stderr}")
+        # shell=True позволяет запускать системные команды напрямую
+        subprocess.run(command, shell=True, check=True)
+    except subprocess.CalledProcessError:
+        print(f"[!] Error or interruption during: {description}")
 
 def main():
-    # Проверка на права администратора (нужны для flushdns и системных настроек)
-    print("--- System Maintenance & Diagnostic Tool ---")
+    print("============================================")
+    print("   System Maintenance & Diagnostic Tool")
+    print("============================================\n")
     
-    # 1. Network Diagnostics
+    # 1. Сетевая диагностика
     run_command("ipconfig /flushdns", "Flushing DNS Cache")
-    run_command("netsh winsock reset", "Resetting Winsock")
+    
+    # 2. Проверка обновлений ПО
+    print("[#] Checking for software updates (Winget)...")
+    # Добавили --include-pinned, чтобы ты видел вообще всё, что можно обновить
+    run_command("winget upgrade --include-pinned", "Checking all packages")
 
-    # 2. System Hygiene
-    temp_path = os.environ.get('TEMP')
-    print(f"[#] Cleaning temporary files in: {temp_path}...")
-    # Здесь можно добавить логику удаления файлов
-
-    # 3. Software Management (Winget)
-    run_command("winget upgrade --all", "Updating all packages via Winget")
-
-    print("\n[+] Maintenance complete. Logs saved to diagnostic_events.log")
+    print("\n[+] Done! All tasks completed.")
+    
+    # Пауза, чтобы окно не закрывалось сразу после работы
+    input("\nPress Enter to exit...")
 
 if __name__ == "__main__":
-    # Логирование событий (Error Handling)
-    sys.stdout = open('diagnostic_events.log', 'w', encoding='utf-8')
-    try:
-        main()
-    finally:
-        sys.stdout.close()
-        sys.stdout = sys.__stdout__
-        print("Done. Check diagnostic_events.log for details.")
+    main()
