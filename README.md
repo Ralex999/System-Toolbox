@@ -10,7 +10,7 @@ A lightweight, modular utility for Windows system optimization, diagnostic repor
 This tool automates routine system administration tasks, combining low-level network diagnostics with high-level software management via Winget integration.
 
 ## 🖼 Preview
-![App Screenshot](screen.png)
+![App Screenshot](System-Toolbox-main.png)
 
 ## 🚀 Key Features
 - **Interactive Menu:** Simple console interface for quick navigation.
