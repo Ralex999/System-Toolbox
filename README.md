@@ -4,6 +4,7 @@ A lightweight utility for Windows system optimization and package management.
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://www.microsoft.com/windows)
 
 ## 🖼 Preview
 ![App Screenshot](System-Toolbox-main.png)
