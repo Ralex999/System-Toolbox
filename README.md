@@ -19,3 +19,14 @@ A lightweight utility for Windows system optimization and package management.
 1. Click the green **Code** button above and select **Download ZIP**.
 2. Extract the archive to any folder.
 3. Run the tool:
+python maintenance.py
+
+
+### Option B: Via Terminal
+git clone github.com/Ralex999/System-Toolbox.git
+cd System-Toolbox
+python maintenance.py
+
+
+---
+*Created by Ralex999*
