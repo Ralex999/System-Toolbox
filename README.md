@@ -1,48 +1,25 @@
-import os
-import subprocess
-import platform
+# 🛠 System Maintenance & Diagnostic Tool (SMDT)
 
-def clear_dns():
-    """Сброс кэша DNS и сети"""
-    print("Checking network configuration...")
-    if platform.system() == "Windows":
-        subprocess.run(["ipconfig", "/flushdns"], capture_output=True)
-        subprocess.run(["netsh", "winsock", "reset"], capture_output=True)
-        print("DNS cache flushed and Winsock reset.")
+A lightweight, modular utility for Windows system optimization, diagnostic reporting, and package management automation. 
 
-def clean_temp():
-    """Очистка временных файлов"""
-    temp_dir = os.environ.get('TEMP')
-    if temp_dir and os.path.exists(temp_dir):
-        print(f"Cleaning temporary files in: {temp_dir}")
-        for root, dirs, files in os.walk(temp_dir):
-            for file in files:
-                try:
-                    os.remove(os.path.join(root, file))
-                except Exception:
-                    continue
-        print("Cleanup complete.")
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://www.microsoft.com/windows)
 
-def main_menu():
-    print("=== System Maintenance Tool ===")
-    print("1. Flush DNS & Reset Network")
-    print("2. Clean Temporary Files")
-    print("3. Full Optimization (1+2)")
-    print("0. Exit")
-    
-    choice = input("\nSelect an option: ")
-    
-    if choice == '1':
-        clear_dns()
-    elif choice == '2':
-        clean_temp()
-    elif choice == '3':
-        clear_dns()
-        clean_temp()
-    elif choice == '0':
-        print("Exiting...")
-    else:
-        print("Invalid choice.")
+## 📖 Overview
+This tool automates routine system administration tasks, combining low-level network diagnostics with high-level software management via Winget and PowerShell integration.
 
-if __name__ == "__main__":
-    main_menu()
+## 🚀 Key Features
+- **Network Diagnostic:** Instant DNS cache flushing and Winsock reset.
+- **Hardware Monitoring:** Thermal and power consumption tracking via platform-specific metrics.
+- **Software Management:** Fully automated Winget updates, including application "pinning" to prevent unwanted version changes.
+- **System Hygiene:** Automated cleanup of temporary directories and system logs.
+- **Stability:** Quick creation of system restore points before critical changes.
+
+## 🛠 Installation
+1. Ensure you have Python 3.8+ installed.
+2. Clone the repository:
+```bash
+git clone [https://github.com/Ralex999/Technical-Notes.git](https://github.com/Ralex999/Technical-Notes.git)
+cd Technical-Notes
+python maintenance.py
