@@ -22,12 +22,6 @@ This tool automates routine system administration tasks, combining low-level net
 
 1. Ensure you have **Python 3.8+** installed.
 2. Clone the repository:
-```bash
+```text
 git clone [https://github.com/Ralex999/System-Toolbox.git](https://github.com/Ralex999/System-Toolbox.git)
 cd System-Toolbox
-
-Run the desired tool (Administrator recommended):
-
-Bash
-python maintenance.py
-Created by Ralex999
