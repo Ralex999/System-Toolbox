@@ -13,20 +13,20 @@ This tool automates routine system administration tasks, combining low-level net
 ![App Screenshot](System-Toolbox-main.png)
 
 ## 🚀 Key Features
-- **Interactive Menu:** Simple console interface for quick navigation.
-- **Quick Diagnostic:** Combined DNS cache flushing and automatic Temporary File cleanup.
-- **Software Management:** Fully automated Winget updates (including pinned/unknown apps) and "pin" management.
-- **System Hygiene:** Deep cleanup of temporary directories and system logs via `cleaner.py`.
+* **Interactive Menu:** Simple console interface for quick navigation.
+* **Quick Diagnostic:** Combined DNS cache flushing and automatic Temporary File cleanup.
+* **Software Management:** Fully automated Winget updates (including pinned/unknown apps) and "pin" management.
+* **System Hygiene:** Deep cleanup of temporary directories and system logs via `cleaner.py`.
 
 ## 🛠 Installation & Usage
 1. Ensure you have **Python 3.8+** installed.
 2. Clone the repository:
-```bash
+```cmd
 git clone [https://github.com/Ralex999/System-Toolbox.git](https://github.com/Ralex999/System-Toolbox.git)
 cd System-Toolbox
 Run the desired tool (Administrator recommended):
 
-Bash
+DOS
 python maintenance.py
 # or
 python cleaner.py
