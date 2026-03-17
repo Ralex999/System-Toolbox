@@ -14,14 +14,20 @@ This tool automates routine system administration tasks, combining low-level net
 
 ## 🚀 Key Features
 - **Interactive Menu:** Simple console interface for quick navigation.
-- **Network Diagnostic:** Instant DNS cache flushing and Winsock reset.
-- **Software Management:** Fully automated Winget updates and "pin" management.
-- **System Hygiene:** Analysis and cleanup of system logs and temporary directories.
+- **Quick Diagnostic:** Combined DNS cache flushing and automatic Temporary File cleanup.
+- **Software Management:** Fully automated Winget updates (including pinned/unknown apps) and "pin" management.
+- **System Hygiene:** Deep cleanup of temporary directories and system logs via `cleaner.py`.
 
-## 🛠 Installation
-1. Ensure you have Python 3.8+ installed.
+## 🛠 Installation & Usage
+1. Ensure you have **Python 3.8+** installed.
 2. Clone the repository:
 ```bash
-git clone [https://github.com/Ralex999/Technical-Notes.git](https://github.com/Ralex999/Technical-Notes.git)
-cd Technical-Notes
+git clone [https://github.com/Ralex999/System-Toolbox.git](https://github.com/Ralex999/System-Toolbox.git)
+cd System-Toolbox
+Run the desired tool (Administrator recommended):
+
+Bash
 python maintenance.py
+# or
+python cleaner.py
+Created by Ralex999
