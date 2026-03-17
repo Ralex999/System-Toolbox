@@ -7,14 +7,16 @@ A lightweight, modular utility for Windows system optimization, diagnostic repor
 [![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://www.microsoft.com/windows)
 
 ## 📖 Overview
-This tool automates routine system administration tasks, combining low-level network diagnostics with high-level software management via Winget and PowerShell integration.
+This tool automates routine system administration tasks, combining low-level network diagnostics with high-level software management via Winget integration.
+
+## 🖼 Preview
+![App Screenshot](screen.png)
 
 ## 🚀 Key Features
+- **Interactive Menu:** Simple console interface for quick navigation.
 - **Network Diagnostic:** Instant DNS cache flushing and Winsock reset.
-- **Hardware Monitoring:** Thermal and power consumption tracking via platform-specific metrics.
-- **Software Management:** Fully automated Winget updates, including application "pinning" to prevent unwanted version changes.
-- **System Hygiene:** Automated cleanup of temporary directories and system logs.
-- **Stability:** Quick creation of system restore points before critical changes.
+- **Software Management:** Fully automated Winget updates and "pin" management to prevent unwanted version changes.
+- **System Hygiene:** Analysis and cleanup of system logs and temporary directories.
 
 ## 🛠 Installation
 1. Ensure you have Python 3.8+ installed.
