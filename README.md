@@ -19,15 +19,9 @@ This tool automates routine system administration tasks, combining low-level net
 * **System Hygiene:** Deep cleanup of temporary directories and system logs via `cleaner.py`.
 
 ## 🛠 Installation & Usage
+
 1. Ensure you have **Python 3.8+** installed.
 2. Clone the repository:
 ```cmd
 git clone [https://github.com/Ralex999/System-Toolbox.git](https://github.com/Ralex999/System-Toolbox.git)
 cd System-Toolbox
-Run the desired tool (Administrator recommended):
-
-DOS
-python maintenance.py
-# or
-python cleaner.py
-Created by Ralex999
