@@ -5,6 +5,7 @@ import sys
 def run_command(command, description):
     print(f"\n[#] Running: {description}...")
     try:
+        # Using shell=True for Windows command compatibility
         subprocess.run(command, shell=True, check=True)
     except subprocess.CalledProcessError:
         print(f"[!] Error during: {description}")
@@ -14,7 +15,7 @@ def run_command(command, description):
 
 def show_menu():
     print("\n" + "="*45)
-    print("   SMDT - System Maintenance Tool")
+    print("      SMDT - System Maintenance Tool")
     print("="*45)
     print(" 1. Quick Diagnostic (DNS Flush)")
     print(" 2. Check ALL Updates (Include Pinned/Unknown)")
@@ -28,39 +29,45 @@ def main():
         show_menu()
         choice = input("Select an option (0-4): ").strip()
 
-    # --- ПУНКТ 1: ДИАГНОСТИКА ---
+        # --- OPTION 1: DIAGNOSTIC ---
         if choice == '1':
             run_command("ipconfig /flushdns", "Flushing DNS Cache")
         
-    # --- ПУНКТ 2: ПРОВЕРКА (Здесь мы вернули всё!) ---
+        # --- OPTION 2: CHECK UPDATES ---
         elif choice == '2':
-            print("[*] Checking for everything: normal, pinned, and unknown versions...")
-            # Флаги --include-pinned и --include-unknown вернут Brave и остальные в список
+            print("[*] Scanning for updates: normal, pinned, and unknown versions...")
+            # Flags --include-pinned and --include-unknown will show Brave/Chrome and others
             run_command("winget upgrade --include-pinned --include-unknown", "Full Updates List")
         
-    # --- ПУНКТ 3: ОБНОВЛЕНИЕ ---
+        # --- OPTION 3: UPGRADE ---
         elif choice == '3':
             confirm = input("\nUpgrade all standard apps? (y/n): ")
             if confirm.lower() == 'y':
                 run_command("winget upgrade --all", "Upgrading Standard Packages")
         
-    # --- ПУНКТ 4: УПРАВЛЕНИЕ ЗАКРЕПЛЕНИЕМ ---
+        # --- OPTION 4: PIN MANAGEMENT ---
         elif choice == '4':
             print("\n--- Pin Management ---")
             print("To EXCLUDE: winget pin add <AppID>")
             print("To INCLUDE: winget pin remove <AppID>")
             run_command("winget pin list", "Showing Pinned Apps")
         
+        # --- EXIT ---
         elif choice == '0':
-            print("\nExiting... Goodbye, Eugene!")
+            print("\nExiting... Goodbye!")
             break
         
         else:
-            print("\n[!] Invalid choice, try 0-4.")
+            print("\n[!] Invalid choice, please select 0-4.")
 
 if __name__ == "__main__":
     try:
+        # Check if running on Windows
+        if os.name != 'nt':
+            print("Critical: This tool is designed for Windows only.")
+            sys.exit(1)
+            
         main()
     except KeyboardInterrupt:
-        print("\n\nInterrupted. Closing...")
+        print("\n\nInterrupted by user. Closing...")
         sys.exit(0)
