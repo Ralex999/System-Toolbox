@@ -25,3 +25,9 @@ This tool automates routine system administration tasks, combining low-level net
 ```text
 git clone [https://github.com/Ralex999/System-Toolbox.git](https://github.com/Ralex999/System-Toolbox.git)
 cd System-Toolbox
+
+Run the desired tool (Administrator recommended):
+
+Plaintext
+python maintenance.py
+Created by Ralex999
